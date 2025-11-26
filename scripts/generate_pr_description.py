@@ -1,19 +1,26 @@
 import os
+import json
 import snowflake.connector
 from github import Github
+from github import Auth
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 
 # Set up GitHub credentials
-gh = Github(os.getenv('GITHUB_TOKEN'))
+auth = Auth.Token(os.getenv('GITHUB_TOKEN'))
+gh = Github(auth=auth)
 
-# Get PR details
+# Get PR details from event payload
 repo_name = os.getenv('GITHUB_REPOSITORY')
-pr_number = os.getenv('GITHUB_REF').split('/')[-1]
+event_path = os.getenv('GITHUB_EVENT_PATH')
+
+with open(event_path, 'r') as f:
+    event_data = json.load(f)
+
+pr_number = event_data['pull_request']['number']
 
 repo = gh.get_repo(repo_name)
-pr = repo.get_pull(int(pr_number))
-
+pr = repo.get_pull(pr_number)
 
 # Gather the PR data (diff, title, commits, feature branch)
 pr_title = pr.title
