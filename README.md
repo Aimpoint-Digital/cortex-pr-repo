@@ -88,6 +88,7 @@ In this step, you'll create a workspace in Snowsight that is connected to your G
    - In the navigation menu, select **Projects » Workspaces**
 
 3. **Create a New Workspace from Git**
+   - Fork the following repo: `https://github.com/Snowflake-Labs/getting-started-with-dbt-on-snowflake/tree/main`
    - From the Workspaces list above the workspace files area, under **Create Workspace**, select **From Git repository**
    - For **Repository URL**, enter the URL of your GitHub repository; for example:
      ```
