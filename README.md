@@ -17,7 +17,7 @@ The best part? **We've already done all the GitHub Actions heavy lifting for you
 Thanks to inspiration from [this excellent blog post](https://austinjhunt.medium.com/automating-pr-descriptions-with-github-actions-and-python-let-the-bots-do-the-talking-55b911369e67), we've got:
 
 ✅ GitHub Actions workflow that triggers on PR labels  
-✅ Python script that connects to Snowflake via private key authentication  
+✅ Python script that connects to Snowflake via private key authentication
 ✅ Automatic PR description updates on GitHub  
 ✅ Sample Tasty Bytes dbt project with real data  
 
