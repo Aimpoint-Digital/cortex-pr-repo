@@ -242,20 +242,6 @@ Return a well-formatted string that includes:
 - ✅ **Testing Notes**: What was validated
 - 🎯 **Recommendations**: Any suggestions for reviewers
 
-## 🧪 Testing Your Solution
-
-To test your stored procedure locally:
-
-```sql
--- Example test call
-CALL generate_pr_description(
-    'Add customer engagement scoring',
-    'feat: add engagement score calculation\nUpdate customer_loyalty_metrics model',
-    'https://github.com/your-repo/pull/123.diff',
-    'feature/add-engagement-score'
-);
-```
-
 ## 📚 Helpful Resources
 
 - [Snowflake AI_COMPLETE() Function](https://docs.snowflake.com/en/sql-reference/functions/ai_complete-prompt-object)
