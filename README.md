@@ -219,7 +219,7 @@ Compare the sample results between `main` and feature branch:
 Use **Snowflake Cortex LLM functions** to generate a comprehensive PR description:
 
 ```sql
-SELECT SNOWFLAKE.CORTEX.COMPLETE(
+SELECT AI_COMPLETE(
     '<model_name>',
     '<your_prompt>'
 )

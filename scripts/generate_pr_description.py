@@ -50,6 +50,8 @@ ctx = snowflake.connector.connect(
     account=snowflake_account,
     private_key=pkb,
     role=snowflake_role,
+    database="TASTY_BYTES_DBT_DB",
+    schema="DEV",
     warehouse=snowflake_warehouse
 )
 
