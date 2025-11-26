@@ -76,128 +76,133 @@ GRANT USAGE ON SCHEMA TASTY_BYTES_DBT_DB.DEV TO ROLE CICD;
 GRANT USAGE ON SCHEMA TASTY_BYTES_DBT_DB.PROD TO ROLE CICD;
 ```
 
-### Step 4: Install and Configure dbt Core
+### Step 4: Setup and Configure dbt Projects in Snowflake
 
-This project requires dbt Core to run the Tasty Bytes demo. Follow these steps to install dbt:
+#### Create a Workspace Connected to Your Git Repository
 
-#### Prerequisites
+In this step, you'll create a workspace in Snowsight that is connected to your GitHub repository.
 
-Before installing dbt, ensure you have:
+1. **Sign in to Snowsight**
 
-- ✅ Python 3.8 or higher installed (`python3 --version`)
-- ✅ pip installed (`pip3 --version`)
-- ✅ Terminal/command prompt access
-- ✅ Permissions to create directories and install packages
+2. **Navigate to Workspaces**
+   - In the navigation menu, select **Projects » Workspaces**
 
-#### Create a Python Virtual Environment
+3. **Create a New Workspace from Git**
+   - From the Workspaces list above the workspace files area, under **Create Workspace**, select **From Git repository**
+   - For **Repository URL**, enter the URL of your GitHub repository; for example:
+     ```
+     https://github.com/my-github-account/getting-started-with-dbt-on-snowflake.git
+     ```
 
-Using a virtual environment is **highly recommended** to avoid dependency conflicts:
+4. **Configure Workspace Settings**
+   - For **Workspace name**, enter `tasty_bytes_dbt` (or your preferred name)
+   - Under **API integration**, select the name of the API integration that you created during setup (e.g., `TB_DBT_GIT_API_INTEGRATION`)
 
-**macOS:**
-```bash
-# Navigate to your project directory
-cd /path/to/cortex-pr-repo
+5. **Complete Authentication**
+   
+   **For Public Repositories:**
+   - Select **Public repository**, and then select **Create**
+   
+   **Note:** Workspaces don't support committing and pushing changes from a workspace to a public repository.
+   
+   **For Private Repositories:**
+   - Select **Personal access token**
+   - Under **Credentials secret**, select **Select database and schema**
+   - Select the database from the list (e.g., `TASTY_BYTES_DBT_DB`)
+   - Select the schema from the list (e.g., `INTEGRATIONS`) where you stored the API integration
+   - Select **Select secret**, and then select your secret from the list (e.g., `tb_dbt_git_secret`)
+   - Select **Create**
 
-# Create virtual environment
-python3 -m venv env
+Snowflake will connect to your GitHub repository and open your new workspace. The `tasty_bytes_dbt_demo` folder contains the dbt project you'll work with.
 
-# Activate virtual environment
-source env/bin/activate
+#### Verify the profiles.yml File
 
-# Verify Python path
-which python
-```
+Each dbt project folder in your Snowflake workspace must contain a `profiles.yml` file that specifies a target warehouse, database, schema, and role. The `type` must be set to `snowflake`. dbt requires an `account` and `user`, but these can be left with an empty or arbitrary string because the dbt project runs in Snowflake under the current account and user context.
 
-**Windows:**
-```bash
-# Navigate to your project directory
-cd \path\to\cortex-pr-repo
+1. Open the `tasty_bytes_dbt_demo/profiles.yml` file in your workspace
 
-# Create virtual environment
-py -m venv env
-
-# Activate virtual environment
-env\Scripts\activate
-
-# Verify Python path
-where python
-```
-
-#### Install dbt Core with Snowflake Adapter
-
-Once your virtual environment is activated, install dbt:
-
-```bash
-# Install dbt-core and the Snowflake adapter
-python -m pip install --upgrade pip
-python -m pip install dbt-core dbt-snowflake
-```
-
-#### Verify Installation
-
-Check that dbt is installed correctly:
-
-```bash
-dbt --version
-```
-
-You should see output showing dbt-core and the snowflake plugin:
-
-```
-installed version: 1.8.0
-   latest version: 1.8.0
-
-Plugins:
-  - snowflake: 1.8.0
-```
-
-#### Configure dbt Profile
-
-The project includes a `profiles.yml` file in the `tasty_bytes_dbt_demo` directory. You'll need to update it with your Snowflake credentials to enable dbt Core to communicate with Snowflake.
-
-**Important**: The `profiles.yml` file is only needed for dbt Core. If you're using dbt Cloud, you can skip this configuration.
-
-##### Authentication
-
-dbt supports multiple authentication methods for Snowflake, for the sake of this hackathon, we will use password authentication
-
-Update your `tasty_bytes_dbt_demo/profiles.yml`:
+2. Verify that your contents match the following (replace with your own database/warehouse names if different):
 
 ```yaml
-tasty_bytes_dbt_demo:
+tasty_bytes:
   target: dev
   outputs:
     dev:
       type: snowflake
-      account: [your_account_id]  # e.g., abc123.us-east-1
-      user: [your_username]
-      password: [your_password]
-      role: [your_role]           # e.g., your custom role
-      database: TASTY_BYTES_DBT_DB
-      warehouse: TASTY_BYTES_DBT_WH
-      schema: DEV
-      threads: 4
-      client_session_keep_alive: False
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: tasty_bytes_dbt_db
+      schema: dev
+      warehouse: tasty_bytes_dbt_wh
+    prod:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: tasty_bytes_dbt_db
+      schema: prod
+      warehouse: tasty_bytes_dbt_wh
 ```
 
-##### Test Your Connection
+When you run dbt commands, the workspace reads this file. Each target is available to select from the **Profile** list in the menu bar above the workspace editing pane.
 
-After configuring your profile, test the connection:
+#### Execute the dbt deps Command
 
-```bash
-cd tasty_bytes_dbt_demo
-dbt debug
+The first command you must execute for any dbt project is `deps`, which updates the dependencies specified in your project's `packages.yml` file. Other commands will fail unless you have updated dependencies.
+
+1. **Open the Output Tab**
+   - Below the workspace editor, open the **Output** tab to see stdout after running dbt commands
+
+2. **Select Project and Profile**
+   - From the menu bar above the workspace editor, confirm that **tasty_bytes_dbt_demo** is selected as the Project
+   - You can have any Profile selected (`dev` or `prod`)
+
+3. **Run the deps Command**
+   - From the command list, select **Deps**
+   - Next to the execute button, select the down arrow
+   - In the **dbt Deps** window, leave **Run with defaults** selected
+   - Enter the name of the External Access Integration you created during setup (e.g., `dbt_ext_access`)
+   - Select **Deps** to run the command
+
+The Output tab will display SQL similar to:
+```sql
+execute dbt project from workspace "USER$"."PUBLIC"."tasty_bytes_dbt" 
+project_root='tasty_bytes_dbt_demo' args='deps --target dev' 
+external_access_integrations = (dbt_ext_access)
 ```
 
-You should see a successful connection message. If you encounter errors, verify:
-- Your credentials are correct
-- The warehouse, database, and schema exist
-- Your user has the necessary permissions
+When the command finishes, you'll see stdout messages like:
+```
+14:47:19  Running with dbt=1.8.9
+14:47:19  Updating lock file in file path: /tmp/dbt/package-lock.yml
+14:47:19  Installing dbt-labs/dbt_utils
+14:47:19  Installed from version 1.3.0
+14:47:19  Up to date!
+```
 
+The `package_lock.yml` file will be created and appear in your workspace files with an **A** next to it (indicating it was added).
 
-Then simply run `dbt_env` to activate your environment.
+#### Compile the dbt Project and View the DAG
 
----
+Compiling a project in dbt creates executable SQL from modeled SQL files and a visual representation of the directed acyclic graph (DAG) for the project.
+
+1. **Compile the Project**
+   - Select the project and target you want to compile
+   - From the command list, select **Compile**
+   - Select the execute button (optionally, specify compile command arguments)
+
+2. **View the DAG**
+   - In the area below the workspace editor, select the **DAG** tab
+   - Use the DAG pane to visualize your dbt project transformations from source files to materialized data model objects
+   - Click and drag to pan the view
+   - Use the **+** and **–** buttons to zoom in and out
+   - Select any tile to view the object's source file in the editor
+
+3. **View Compiled SQL**
+   - In the DAG, select the tile for a dbt SQL model file (e.g., `orders`)
+   - **OR** from the workspace file listing, select any file in the `models` subdirectory
+   - Choose **View Compiled SQL** in the upper-right of the workspace editor to see the compiled SQL in a split-pane view
 
 ### Step 5: Configure GitHub Secrets
 
