@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="QUANTITY", model=get_where_subquery(source('tb_101', 'ORDER_DETAIL'))) }}

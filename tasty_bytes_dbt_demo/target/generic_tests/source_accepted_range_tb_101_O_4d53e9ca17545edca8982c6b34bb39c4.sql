@@ -1,0 +1,1 @@
+{{ dbt_utils.test_accepted_range(column_name="ORDER_AMOUNT", inclusive=true, max_value=10, min_value=0, model=get_where_subquery(source('tb_101', 'ORDER_HEADER'))) }}

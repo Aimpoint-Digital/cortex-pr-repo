@@ -1,0 +1,1 @@
+{{ test_is_positive_amount(column_name="COST_OF_GOODS_USD", model=get_where_subquery(source('tb_101', 'MENU'))) }}

@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="LOCATION_ID", model=get_where_subquery(source('tb_101', 'LOCATION'))) }}

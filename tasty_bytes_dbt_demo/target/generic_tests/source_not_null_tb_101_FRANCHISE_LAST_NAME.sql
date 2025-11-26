@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="LAST_NAME", model=get_where_subquery(source('tb_101', 'FRANCHISE'))) }}

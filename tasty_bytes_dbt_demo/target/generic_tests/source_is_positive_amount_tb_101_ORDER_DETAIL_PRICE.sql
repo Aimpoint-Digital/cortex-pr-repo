@@ -1,0 +1,1 @@
+{{ test_is_positive_amount(column_name="PRICE", model=get_where_subquery(source('tb_101', 'ORDER_DETAIL'))) }}

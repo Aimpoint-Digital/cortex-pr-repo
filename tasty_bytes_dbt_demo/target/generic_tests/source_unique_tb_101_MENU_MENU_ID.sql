@@ -1,0 +1,1 @@
+{{ test_unique(column_name="MENU_ID", model=get_where_subquery(source('tb_101', 'MENU'))) }}

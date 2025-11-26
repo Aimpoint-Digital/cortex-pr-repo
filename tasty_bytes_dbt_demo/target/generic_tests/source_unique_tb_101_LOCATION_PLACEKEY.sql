@@ -1,0 +1,1 @@
+{{ test_unique(column_name="PLACEKEY", model=get_where_subquery(source('tb_101', 'LOCATION'))) }}

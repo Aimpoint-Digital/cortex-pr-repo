@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="ORDER_TOTAL", model=get_where_subquery(source('tb_101', 'ORDER_HEADER'))) }}

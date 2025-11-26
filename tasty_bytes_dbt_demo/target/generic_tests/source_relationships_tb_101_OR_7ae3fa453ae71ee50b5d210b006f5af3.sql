@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="LOCATION_ID", field="LOCATION_ID", model=get_where_subquery(source('tb_101', 'ORDER_HEADER')), to=source('tb_101', 'LOCATION')) }}

@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="PRIMARY_CITY", model=get_where_subquery(source('tb_101', 'TRUCK'))) }}

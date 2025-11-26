@@ -1,0 +1,1 @@
+{{ dbt_utils.test_accepted_range(column_name="COUNTRY_ID", max_value=1000, min_value=1, model=get_where_subquery(source('tb_101', 'COUNTRY'))) }}

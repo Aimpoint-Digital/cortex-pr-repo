@@ -1,0 +1,36 @@
+name: Generate PR Description
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  generate-pr-description:
+    if: github.event.label.name == 'pr-description'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install openai PyGithub
+      
+      - name: Write Secret to File
+        run: echo "${{ secrets.SNOWFLAKE_PK }}" > secret.txt
+      
+      - name: Generate PR Description
+        run: python scripts/generate_pr_description.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_ROLE: CICD
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_AUTHENTICATOR: SNOWFLAKE_JWT
+          SNOWFLAKE_PRIVATE_KEY_PATH: ${{ github.workspace }}/secret.txt 

@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="MENU_TYPE_ID", model=get_where_subquery(source('tb_101', 'TRUCK'))) }}

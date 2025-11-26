@@ -1,0 +1,155 @@
+==================== 2025-11-26 10:52:23.673071 | 6affafd6-00d6-4aec-be04-d425475c6106 ====================
+10:52:23.673247 [info ]: Starting dbt LSP server
+10:52:23.673507 [info ]: Connecting to LSP client on port 8000
+10:52:23.674004 [info ]: Successfully connected to LSP client
+10:52:23.674010 [info ]: Creating LSP service...
+10:52:23.721678 [info ]: Creating LSP server...
+10:52:23.721694 [info ]: Starting LSP server...
+10:52:24.577094 [warn ]: dbt1065: Updated version available for dbt_utils@1.3.0: 1.3.2
+10:52:24.912504 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+10:52:24.917012 [info ]: Cached model count updated: 10 models (estimate)
+10:52:24.966048 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+10:52:24.982489 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+10:52:24.983988 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+10:52:24.984182 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+10:52:24.984501 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+10:52:24.985338 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+10:52:24.985565 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+10:52:24.986082 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+10:52:25.011971 [info ]: Cached model count updated: 10 models (accurate)
+==================== 2025-11-26 10:53:16.326603 | 299f533a-c8d2-4e11-aa4e-11ce0dbcfe46 ====================
+10:53:16.328954 [info ]: Starting dbt LSP server
+10:53:16.328997 [info ]: Connecting to LSP client on port 8000
+10:53:16.329774 [info ]: Successfully connected to LSP client
+10:53:16.329785 [info ]: Creating LSP service...
+10:53:16.373352 [info ]: Creating LSP server...
+10:53:16.373364 [info ]: Starting LSP server...
+10:53:16.533375 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+10:53:16.538666 [info ]: Cached model count updated: 10 models (estimate)
+10:53:16.599699 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+10:53:16.603887 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+10:53:16.605050 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+10:53:16.605226 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+10:53:16.605552 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+10:53:16.606278 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+10:53:16.606532 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+10:53:16.606891 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+10:53:16.627945 [info ]: Cached model count updated: 10 models (accurate)
+11:27:57.167208 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+11:27:57.171527 [info ]: Cached model count updated: 10 models (estimate)
+11:27:57.208805 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+11:27:57.215513 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+11:27:57.216940 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+11:27:57.217369 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+11:27:57.218172 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+11:27:57.220797 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+11:27:57.221509 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+11:27:57.222324 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+11:27:57.239522 [info ]: Cached model count updated: 10 models (accurate)
+11:28:00.895333 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+11:28:00.898454 [info ]: Cached model count updated: 10 models (estimate)
+11:28:00.920286 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+11:28:00.924472 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+11:28:00.925201 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+11:28:00.925417 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+11:28:00.925935 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+11:28:00.927137 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+11:28:00.927616 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+11:28:00.928070 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+11:28:00.942944 [info ]: Cached model count updated: 10 models (accurate)
+11:28:02.652005 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+11:28:02.655668 [info ]: Cached model count updated: 10 models (estimate)
+11:28:02.679102 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+11:28:02.681633 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+11:28:02.682273 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+11:28:02.682459 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+11:28:02.682893 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+11:28:02.683436 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+11:28:02.683692 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+11:28:02.684087 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+11:28:02.701578 [info ]: Cached model count updated: 10 models (accurate)
+11:28:09.531346 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+11:28:09.534191 [info ]: Cached model count updated: 10 models (estimate)
+11:28:09.556134 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+11:28:09.558823 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+11:28:09.559717 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+11:28:09.560008 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+11:28:09.560455 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+11:28:09.561322 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+11:28:09.561561 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+11:28:09.562011 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+11:28:09.576727 [info ]: Cached model count updated: 10 models (accurate)
+11:28:13.868981 [warn ]: dbt1049: Python models are not currently supported
+  --> models/marts/sales_metrics_by_location.py
+11:28:13.873276 [info ]: Cached model count updated: 10 models (estimate)
+11:28:13.896238 [error]: dbt0102: Deprecated test arguments: ["max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:17:24
+11:28:13.899228 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:140:20
+11:28:13.899917 [error]: dbt1060: Ignored unexpected key `"loaded_at_field"`. YAML path: `loaded_at_field`.
+  --> models/staging/__sources.yml:168:5
+11:28:13.900084 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:187:20
+11:28:13.900396 [error]: dbt0102: Deprecated test arguments: ["inclusive", "max_value", "min_value"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:220:24
+11:28:13.901011 [error]: dbt0102: Deprecated test arguments: ["expression"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:205:25
+11:28:13.901246 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:180:20
+11:28:13.901686 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/__sources.yml:273:20
+11:28:13.915660 [info ]: Cached model count updated: 10 models (accurate)

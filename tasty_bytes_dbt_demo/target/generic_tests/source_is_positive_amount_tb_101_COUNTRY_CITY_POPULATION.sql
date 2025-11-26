@@ -1,0 +1,1 @@
+{{ test_is_positive_amount(column_name="CITY_POPULATION", model=get_where_subquery(source('tb_101', 'COUNTRY'))) }}
