@@ -100,13 +100,6 @@ In this step, you'll create a workspace in Snowsight that is connected to your G
    - Under **API integration**, select the name of the API integration that you created during setup (e.g., `TB_DBT_GIT_API_INTEGRATION`)
 
 5. **Complete Authentication**
-   
-   **For Public Repositories:**
-   - Select **Public repository**, and then select **Create**
-   
-   **Note:** Workspaces don't support committing and pushing changes from a workspace to a public repository.
-   
-   **For Private Repositories:**
    - Select **Personal access token**
    - Under **Credentials secret**, select **Select database and schema**
    - Select the database from the list (e.g., `TASTY_BYTES_DBT_DB`)
@@ -119,34 +112,6 @@ Snowflake will connect to your GitHub repository and open your new workspace. Th
 #### Verify the profiles.yml File
 
 Each dbt project folder in your Snowflake workspace must contain a `profiles.yml` file that specifies a target warehouse, database, schema, and role. The `type` must be set to `snowflake`. dbt requires an `account` and `user`, but these can be left with an empty or arbitrary string because the dbt project runs in Snowflake under the current account and user context.
-
-1. Open the `tasty_bytes_dbt_demo/profiles.yml` file in your workspace
-
-2. Verify that your contents match the following (replace with your own database/warehouse names if different):
-
-```yaml
-tasty_bytes:
-  target: dev
-  outputs:
-    dev:
-      type: snowflake
-      account: 'not needed'
-      user: 'not needed'
-      role: accountadmin
-      database: tasty_bytes_dbt_db
-      schema: dev
-      warehouse: tasty_bytes_dbt_wh
-    prod:
-      type: snowflake
-      account: 'not needed'
-      user: 'not needed'
-      role: accountadmin
-      database: tasty_bytes_dbt_db
-      schema: prod
-      warehouse: tasty_bytes_dbt_wh
-```
-
-When you run dbt commands, the workspace reads this file. Each target is available to select from the **Profile** list in the menu bar above the workspace editing pane.
 
 #### Execute the dbt deps Command
 
@@ -181,29 +146,6 @@ When the command finishes, you'll see stdout messages like:
 14:47:19  Installed from version 1.3.0
 14:47:19  Up to date!
 ```
-
-The `package_lock.yml` file will be created and appear in your workspace files with an **A** next to it (indicating it was added).
-
-#### Compile the dbt Project and View the DAG
-
-Compiling a project in dbt creates executable SQL from modeled SQL files and a visual representation of the directed acyclic graph (DAG) for the project.
-
-1. **Compile the Project**
-   - Select the project and target you want to compile
-   - From the command list, select **Compile**
-   - Select the execute button (optionally, specify compile command arguments)
-
-2. **View the DAG**
-   - In the area below the workspace editor, select the **DAG** tab
-   - Use the DAG pane to visualize your dbt project transformations from source files to materialized data model objects
-   - Click and drag to pan the view
-   - Use the **+** and **–** buttons to zoom in and out
-   - Select any tile to view the object's source file in the editor
-
-3. **View Compiled SQL**
-   - In the DAG, select the tile for a dbt SQL model file (e.g., `orders`)
-   - **OR** from the workspace file listing, select any file in the `models` subdirectory
-   - Choose **View Compiled SQL** in the upper-right of the workspace editor to see the compiled SQL in a split-pane view
 
 ### Step 5: Configure GitHub Secrets
 
