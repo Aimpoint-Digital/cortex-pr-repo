@@ -65,10 +65,8 @@ ctx = snowflake.connector.connect(
 # Call the stored procedure to generate PR description
 cursor = ctx.cursor()
 try:
-    print("Calling generate_pr_description stored procedure...")
     cursor.execute(
-        "CALL generate_pr_description(?, ?, ?, ?)",
-        (pr_title, pr_commits, pr_diff, feature_branch)
+        f"CALL generate_pr_description('{pr_title}', '{pr_commits}', '{pr_diff}', '{feature_branch}')"
     )
     
     # Fetch the result
