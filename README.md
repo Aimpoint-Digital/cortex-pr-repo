@@ -242,6 +242,29 @@ Return a well-formatted string that includes:
 - ✅ **Testing Notes**: What was validated
 - 🎯 **Recommendations**: Any suggestions for reviewers
 
+## 👨‍💻 Stored Procedure
+
+Modify the below stored procedure, including the above requirements:
+
+```sql
+CREATE OR REPLACE PROCEDURE TASTY_BYTES_DBT_DB.dev.generate_pr_description(
+    PR_TITLE STRING,
+    PR_COMMITS STRING,
+    PR_DIFF STRING,
+    FEATURE_BRANCH STRING
+)
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.10'
+HANDLER = 'main'
+PACKAGES = ('snowflake-snowpark-python')
+AS
+$$
+def main(session, pr_title, pr_commits, pr_diff, feature_branch):
+    return "Hello world!"
+$$;
+```
+
 ## 📚 Helpful Resources
 
 - [Snowflake AI_COMPLETE() Function](https://docs.snowflake.com/en/sql-reference/functions/ai_complete-prompt-object)
