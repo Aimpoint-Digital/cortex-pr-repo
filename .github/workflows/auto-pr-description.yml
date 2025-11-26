@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install openai PyGithub
+          pip install openai PyGithub snowflake-connector-python
       
       - name: Write Secret to File
         run: echo "${{ secrets.SNOWFLAKE_PK }}" > secret.txt
@@ -33,4 +33,4 @@ jobs:
           SNOWFLAKE_ROLE: CICD
           SNOWFLAKE_WAREHOUSE: TASTY_BYTES_DBT_WH
           SNOWFLAKE_AUTHENTICATOR: SNOWFLAKE_JWT
-          SNOWFLAKE_PRIVATE_KEY_PATH: ${{ github.workspace }}/secret.txt 
+          SNOWFLAKE_PRIVATE_KEY_PATH: ${{ github.workspace }}/secret.txt
